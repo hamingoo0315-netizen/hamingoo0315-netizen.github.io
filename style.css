@@ -83,11 +83,186 @@ figcaption {
 
 
 
+
+
 @media screen and (max-width: 704px) {
     
 }
 
-    /*border: lightgrey 5px dotted;
 
+.floating-btn {
+    position: fixed;   /* 화면에 고정 */
+    bottom: 20px;      /* 화면 아래에서 20px */
+    right: 20px;       /* 화면 오른쪽에서 20px */
+    padding: 15px 20px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+@media screen and (max-width: 704px){
+
+    body{
+        background-color: pink;
+    }
+}
+    /*border: lightgrey 5px dotted;
+}
+
+.image-group .container {
+    display: flex;
+    justify-content: center;  /* 가로 가운데 정렬 */
+    gap: 20px;                /* 박스들 사이 간격 */
+    margin-bottom: 20px;      /* 아래 간격 */
+}
+
+.image-button {
+    width: 120px;
+    cursor: pointer;
+}
+
+ <style>
+    /* 전체 가운데 정렬 (페이지 내에서 갤러리 영역 가운데) */
+    .gallery-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center; /* 가로 중앙 */
+    }
+
+    /* 갤러리 자체 너비를 제한해서 중앙에 보이게 함 */
+    .gallery {
+      max-width: 520px; /* 원하는 너비로 조절 */
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      margin: 40px 0;
+    }
+
+    /* 한 줄(row)은 가운데 정렬된 flex 행 */
+    .row {
+      width: 100%;
+      display: flex;
+      justify-content: center; /* 행 내에서 가운데 정렬 */
+      gap: 20px;
+    }
+
+    /* 각 아이템(박스 + 그 아래 이미지 영역)을 세로로 쌓기 */
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 박스와 그 아래 이미지 가운데 정렬 */
+      width: 120px;        /* 박스 너비에 맞춰 고정 */
+    }
+
+    /* 하얀 박스(이미지 버튼) */
+    .white-box {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      cursor: pointer;
+      display: block;
+      user-select: none;
+    }
+
+    /* 박스 바로 아래 나오는 이미지 영역 */
+    .image-area {
+      width: 100%;
+      margin-top: 10px;
+      /* 처음엔 비어있음; 이미지가 들어오면 block으로 보임 (자동) */
+    }
+
+    .image-area img {
+      width: 100%;       /* item width에 맞춤 */
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    /* 높은 우선순위로 외부 스타일 덮어쓰기를 보장 (필요하면 제거 가능) */
+    .gallery .row .item .white-box { display: block !important; }
+
+    .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3개씩 1줄 */
+    gap: -60px;
+    width: 380px; /* 블록 3개가 들어가는 전체 너비 */
+    margin: 0 auto; /* 화면 가운데 정렬 */
+}
+
+/* 하얀 버튼 */
+.white-box {
+    width: 200px;
+    cursor: pointer;
+}
+
+/* 큰 이미지 출력 영역 */
+.image-output {
+    grid-column: span 3;   /* ★★★ 3칸 전체 너비를 차지 */
+    margin-top: 10px;
+}
+
+.image-output img {
+    width: 100%;
+    height: auto;          /* 전체 폭을 꽉 채움 */
+    display: block;
+    border-radius: 7px;
+
+
+}
+
+.page-wrapper {
+    max-width: 1200px;   /* 원하는 너비 */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 버튼 3개 촘촘하게 정렬 */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;           /* 간격 원하는 대로 */
+    margin-bottom: 40px;
+}
+
+.btn-box {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* 아래 큰 이미지 */
+.content-section {
+    text-align: center;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 0 auto 40px;
+}
+
+.text-columns {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.text-columns .col {
+    width: 180px;
+}
+
+
+
+
+  </style>
 
 
