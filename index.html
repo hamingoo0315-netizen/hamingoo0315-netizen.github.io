@@ -9,22 +9,52 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="icon" type="image/png" href="">
 	<meta property="og:image" content="">
+<style>
+/* 텍스트 영역 전용 */
+.text-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
+/* 모든 하얀 박스 줄을 감싸는 그룹 */
+.image-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 가운데 정렬 핵심 */
+    gap: 20px;
+}
+
+/* 박스가 있는 한 줄 */
+.box-row {
+    display: flex;
+    justify-content: center; /* 한 줄 가운데 정렬 */
+    gap: 20px;
+}
+
+/* 박스 버튼 */
+.white-box {
+    width: 120px;
+    cursor: pointer;
+}
+
+/* 이미지가 나타나는 영역 */
+.image-output {
+    margin-top: 10px;
+}
+</style>
 </head>
 <body>
 </body>
 
 	<div class="container"
 	>
-
-	<img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0" class="white-btn" onclick="showImage('https://d2w9rnfcy7mm78.cloudfront.net/41333052/original_f51cd1c37c5b406abce142bd992b0040.png?1763968556?bc=0')">
+	<div class="custom-image-area">
 
 	<h1>itsmytokkipooll</h1>
 	<br>
 	<br>
 	<h7> tokkipooll</h7>
 </div>
-
 
 
 	<div class="container">
@@ -38,59 +68,77 @@
 	<figure class="image-group">
 
 	
+ 
+</head>
+<body>
 
-    <div class="container">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0" class="white-btn" onclick="showImage('https://d2w9rnfcy7mm78.cloudfront.net/41481402/original_b71083568a554b9d2d3e3e6a45ba2316.gif?1764569827?bc=0">
+  <header style="text-align:center; color:#999; margin-top:12px;">
+    <h1 style="margin:0; font-weight:300; color:#bbb;">itsmytokkipooll</h1>
+  </header>
 
-         <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-          <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
+  <main class="gallery-wrapper">
+    <div class="gallery" id="gallery">
 
-<div id="image-output"></div>
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		<img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		 <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		
-    </div>
-    <div class="container">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		<img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		
-    </div>
-    <div class="container">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		<img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		
-    </div>
-    <div class="container">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		<img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		
-    </div>
-    <div class="container">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		<img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		
-    </div>
-    <div class="container">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		<img src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0">
-		
-    </div>
+      <!-- (예) 3열씩 5행 = 15개 박스: 필요 개수만큼 복사하세요 -->
+     <div class="grid-container">
 
-    <div id="image-output"></div>
+    <!-- 1번 버튼 -->
+    <img class="white-box"
+         src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0"
+         onclick="toggleImage('img1', 'https://d2w9rnfcy7mm78.cloudfront.net/41642742/original_826ebbab12d39771445065b9ed32e992.png?1765178301?bc=0')">
     
+    <!-- 2번 버튼 -->
+    <img class="white-box"
+         src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0"
+         onclick="toggleImage('img2', 'https://d2w9rnfcy7mm78.cloudfront.net/41481481/original_0b621d161bfa73a62dd598f0c39eb6f2.png?1764570049?bc=0')">
 
-    <footer>
-    	<figcaption>hanin <br>mail.hm4010@icloud.com <br> tel. 01041904082</figcaption></footer>
-</figure>
+    <!-- 3번 버튼 -->
+    <img class="white-box"
+         src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0"
+         onclick="toggleImage('img3', 'https://d2w9rnfcy7mm78.cloudfront.net/41481480/original_4795ca1c05ed99c7219673ea4b9f4cd5.png?1764570049?bc=0')">
+
+    <!-- 클릭 시 나타나는 큰 이미지 (3칸 전체 차지) -->
+    <div id="img1" class="image-output"></div>
+    <div id="img2" class="image-output"></div>
+    <div id="img3" class="image-output"></div>
 
 
-	<button class="floating-btn">클릭</button>
+    <!-- 4~6번 버튼 -->
+    <img class="white-box"
+         src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0"
+         onclick="toggleImage('img4', 'https://d2w9rnfcy7mm78.cloudfront.net/41481402/original_b71083568a554b9d2d3e3e6a45ba2316.gif?1764569827?bc=0')">
+    <img class="white-box"
+         src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0"
+         onclick="toggleImage('img5', 'https://d2w9rnfcy7mm78.cloudfront.net/41481161/original_8e962010aaa5cf992ada7b7aea304b66.png?1764568854?bc=0')">
+    <img class="white-box"
+         src="https://d2w9rnfcy7mm78.cloudfront.net/41481818/original_15cf291688403500c8fa9265bfcf9d11.png?1764571712?bc=0"
+         onclick="toggleImage('img6', 'https://d2w9rnfcy7mm78.cloudfront.net/41481194/original_8373ef08a9b5d37f63c3a15f0638f217.jpg?1764568962?bc=0')">
+
+    <div id="img4" class="image-output"></div>
+    <div id="img5" class="image-output"></div>
+    <div id="img6" class="image-output"></div>
+
+</div>
+
+      <!-- 필요하면 row를 더 추가하세요 -->
+
+    </div>
+  </main>
+
+  <!-- 스크립트: 각 박스에 클릭 리스너를 달아 토글 동작 구현 -->
+ <script>
+function toggleImage(id, url) {
+    const area = document.getElementById(id);
+
+    if (area.innerHTML !== "") {
+        area.innerHTML = "";   // 접기
+    } else {
+        area.innerHTML = `<img src="${url}">`;  // 펼치기
+    }
+}
+</script>
+</body>
+</html>
 
 	<!--
 
@@ -195,24 +243,3 @@
 
 	<footer></footer>
  -->
-
- <script>
-function showImage(url) {
-    const container = document.getElementById("image-output");
-    const img = document.createElement("img");
-    img.src = url;
-    img.style.width = "300px";
-    img.style.marginTop = "20px";
-    container.appendChild(img);
-}
-</script>
-
-<style>
-.white-btn {
-    width: 150px;
-    height: auto;
-    cursor: pointer;
-}
-</style>
-</body>
-</html>
