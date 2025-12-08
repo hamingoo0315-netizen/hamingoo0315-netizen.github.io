@@ -1,0 +1,93 @@
+	
+
+
+    	
+
+        *{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+
+
+
+
+
+h1 {
+
+    margin: auto;
+    font-family: arial;
+    font-size: 20pt;
+    color: lightgrey;
+    text-align: center;
+}
+
+h7{ position: relative;
+    margin: auto;
+    font-family: arial;
+    font-size: 10pt;
+    color: lightgrey;
+    text-align: center;
+
+}
+
+p {
+    position: relative;
+    line-height: 2;
+    text-align: center;
+
+}
+
+a {
+
+
+    text-align: center;
+    position: relative;
+}
+
+footer{ 
+    position resize: ;
+    margin-left: 315px;
+    text-align: left;
+    font-size: 7pt;
+}
+
+
+
+
+img {
+    height: 140px;
+}
+
+.container {
+    width: 400px;
+    background-color: white;
+    margin: auto;
+    justify-content: center;
+    /*display: flex;*/
+    gap: 5px;
+
+
+}
+
+
+figure.image-group {
+    text-align: center;
+    margin: auto;
+}
+
+figcaption {
+    margin-top: 20px;
+}
+
+
+
+@media screen and (max-width: 704px) {
+    
+}
+
+    /*border: lightgrey 5px dotted;
+
+
+
