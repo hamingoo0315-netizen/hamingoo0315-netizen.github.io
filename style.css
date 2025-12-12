@@ -12,11 +12,11 @@
 /* 이미지 URL 및 핫스팟 좌표 (8 8은 16x16px 이미지 중앙에 적합합니다) */
 body {
     /* 32x32px 이미지라면, 중앙 핫스팟은 16 16 */
-    cursor: url('my-cursor.png') 16 16, auto; 
+    cursor: url('https://d2w9rnfcy7mm78.cloudfront.net/41760700/original_b65524c502d54a5a61f91a0a3be7a6f1.png?1765521786?bc=0') 16 16, auto; 
 }
 
 a, button, .white-box, input[type="submit"] {
-    cursor: url('my-cursor.png') 16 16, auto !important;
+    cursor: url('https://d2w9rnfcy7mm78.cloudfront.net/41760700/original_b65524c502d54a5a61f91a0a3be7a6f1.png?1765521786?bc=0') 16 16, auto !important;
 }
 /* ------------------------------------------------ */
 /* 기존 스타일 코드 */
