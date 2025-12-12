@@ -189,22 +189,33 @@ figcaption {
     width: 380px;
     margin: 0 auto;
 }
-
-/* ⬇⬇⬇ 여기부터 사이드바 CSS ⬇⬇⬇ */
 .floating-sidebar {
-    position: relative;
-    top: 600px;
+    position: fixed; /* 브라우저 창에 고정 */
+    top: 50%; /* 화면 중앙(수직)에서 시작 */
 
-    right: 590px;
-    transform: noe;
+    /* ✅ 수정: 메인 콘텐츠 (1200px) 영역 옆에 위치하도록 계산 */
+    /* 100vw는 브라우저 전체 너비, 1200px는 콘텐츠 너비 */
+    right: calc((100vw - 1200px) / 2 - 30px); /* 메인 콘텐츠 오른쪽에서 30px 간격 */
+    
+    /* ❌ transform: noe; 를 올바르게 수정 */
+    /* ✅ 수정: 세로 중앙 정렬을 위한 필수값 */
+    transform: translateY(-50%); 
+    
     display: flex;
     flex-direction: column;
-    gap:  2px;
+    gap: 15px; /* 간격 증가 (가독성 향상) */
     z-index: 2000;
 }
 
+/* (좁은 화면에서는 계산이 복잡해지므로 창 끝에 붙이는 미디어 쿼리 추가) */
+@media screen and (max-width: 1260px) {
+    .floating-sidebar {
+        /* 화면이 좁아지면 창 오른쪽 끝에서 30px 위치에 고정 */
+        right: 30px; 
+    }
+}
+
 .floating-sidebar .side-btn {
-    position: relative;
     width: 100px;
     height: auto;
     cursor: pointer;
@@ -214,8 +225,6 @@ figcaption {
 .floating-sidebar .side-btn:hover {
     transform: scale(1.1);
 }
-/* ⬆⬆⬆ 여기까지 사이드바 CSS ⬆⬆⬆ */
-
 .white-box {
     width: 200px;
     cursor: pointer;
