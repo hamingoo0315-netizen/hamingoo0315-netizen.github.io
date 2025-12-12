@@ -39,12 +39,15 @@
 
 /* 이미지가 나타나는 영역 */
 .image-output {
-    margin-top: 10px;
+    margin-top: 5px;
 }
+
+
+
 </style>
 </head>
-<body>
-</body>
+
+
 
 	<div class="container"
 	>
@@ -53,14 +56,24 @@
 	<h1>itsmytokkipooll</h1>
 	<br>
 	<br>
-	<h7> tokkipooll</h7>
+	
 </div>
 
 
 	<div class="container">
-		<p>  행복하세요 <a heref="https://youtu.be/OsQ5YB5eksI">.            하민 </a> 하민 하민 하민 하민  <a href="https://youtu.be/2Kw0PCvGhvA"> 하닌 </a> 하민 하민 하민 하민 하민  <span style="color:lightpink;">하민 </span>하민 하민 하민 하민 하민 하민 하민 하
-			<br>
-		<a href="https://www.instagram.com/haminggoo/"> instagram</a>
+		<p>   <a href="https://youtu.be/2Kw0PCvGhvA"><span style="color:lightpink;"> </a>   </span>
+		
+	
+
+<h7>tokkipooll</h7>
+    </a>
+
+    <div class="instagram-link-wrapper">
+    <a href="https://www.instagram.com/tokkipooll/" target="_blank" class="insta-btn-link">
+        <img src="https://d2w9rnfcy7mm78.cloudfront.net/41760309/original_df16dfe0ff2fee29851421499be1bc1e.png?1765518605?bc=0" alt="인스타그램으로 이동" class="insta-profile-img">
+    </a>
+</div>
+</div>
 	</p>
 
 	</div>
@@ -69,12 +82,17 @@
 
 	
  
+	<div class="floating-sidebar">
+    <img id="homeBtn" class="side-btn" 
+         src="https://d2w9rnfcy7mm78.cloudfront.net/41758353/original_4f1ee2eb39d5d55ae3077a7caf00dc3f.png?1765506449?bc=0"/>
+
+    <img id="openBtn" class="side-btn"
+         src="https://d2w9rnfcy7mm78.cloudfront.net/41758352/original_d343f1692c67442056a764f473305fd9.png?1765506449?bc=0"/>
+</div>
 </head>
 <body>
 
-  <header style="text-align:center; color:#999; margin-top:12px;">
-    <h1 style="margin:0; font-weight:300; color:#bbb;">itsmytokkipooll</h1>
-  </header>
+
 
   <main class="gallery-wrapper">
     <div class="gallery" id="gallery">
@@ -144,22 +162,113 @@
 
       <!-- 필요하면 row를 더 추가하세요 -->
 
-    </div>
   </main>
 
-  <!-- 스크립트: 각 박스에 클릭 리스너를 달아 토글 동작 구현 -->
- <script>
-function toggleImage(id, url) {
-    const area = document.getElementById(id);
 
-    if (area.innerHTML !== "") {
-        area.innerHTML = "";   // 접기
+
+ <h8> hanin </h8>
+ <h9>mail. hm4010@icloud.com</h9>
+  <h10> tel. 010 4190 4082 </h10>
+  <h11> 서울시 마포구 와우산로 94 미술종합강의동 </h11>
+  <img src="https://d2w9rnfcy7mm78.cloudfront.net/41642824/original_8ac889595669e17cabfbc7075c9e7093.png?1765178438?bc=0">
+
+
+
+
+  <!-- 스크립트: 각 박스에 클릭 리스너를 달아 토글 동작 구현 -->
+<script>
+/**
+ * 이미지를 로드하고, image-output 컨테이너의 펼쳐짐 상태를 토글하며,
+ * 이미지가 펼쳐질 때 컨테이너로 스크롤합니다.
+ * * @param {string} areaId - 이미지가 표시될 image-output 요소의 ID (예: 'image-output')
+ * @param {string} imageUrl - 표시할 이미지의 URL
+ */
+function toggleImage(areaId, imageUrl) {
+    const area = document.getElementById(areaId);
+    const imageElement = area.querySelector('img');
+    
+    // 현재 상태 확인: 이미 펼쳐져 있는지 확인 (open 클래스로 판단)
+    const isOpen = area.classList.contains('open');
+
+    if (isOpen) {
+        // --- [접기] 동작 ---
+        
+        // CSS의 접히는 애니메이션 시작
+        area.classList.remove('open');
+        
     } else {
-        area.innerHTML = `<img src="${url}">`;  // 펼치기
+        // --- [펼치기] 동작 ---
+        
+        // 1. 이미지 소스(src) 업데이트
+        if (!imageElement) {
+             // 이미지가 없을 때, alt 속성도 추가하여 접근성을 높입니다.
+             area.innerHTML = `<img src="${imageUrl}" alt="선택된 이미지">`; 
+        } else {
+             imageElement.src = imageUrl;
+        }
+
+        // 2. CSS의 펼쳐지는 애니메이션 시작
+        area.classList.add('open');
+        
+        // 3. ✨ 새로 추가된 스크롤 이동 로직 ✨
+        // 펼쳐지는 애니메이션이 시작된 후 스크롤을 이동해야 합니다.
+        // CSS transition 시간(약 0.4초 ~ 0.6초)을 고려하여 딜레이를 줍니다.
+        setTimeout(() => {
+            // area (이미지 컨테이너)의 시작 위치로 부드럽게 스크롤
+            area.scrollIntoView({
+                behavior: 'smooth', // 부드러운 스크롤
+                block: 'start'      // 요소의 시작 지점이 뷰포트의 시작 지점에 오도록
+            });
+        }, 400); // 400ms(0.4초) 딜레이 설정 (CSS 애니메이션이 시작된 후 스크롤)
     }
 }
+
+// 모든 output div 가져오기
+const outputs = document.querySelectorAll(".image-output");
+
+// 하얀 박스 버튼이 어떤 이미지를 보여줘야 하는지 매핑
+const imageMap = {
+    img1: "https://d2w9rnfcy7mm78.cloudfront.net/41642742/original_826ebbab12d39771445065b9ed32e992.png?1765178301?bc=0",
+    img2: "https://d2w9rnfcy7mm78.cloudfront.net/41481481/original_0b621d161bfa73a62dd598f0c39eb6f2.png?1764570049?bc=0",
+    img3: "https://d2w9rnfcy7mm78.cloudfront.net/41481480/original_4795ca1c05ed99c7219673ea4b9f4cd5.png?1764570049?bc=0",
+    img4: "https://d2w9rnfcy7mm78.cloudfront.net/41481402/original_b71083568a554b9d2d3e3e6a45ba2316.gif?1764569827?bc=0",
+    img5: "https://d2w9rnfcy7mm78.cloudfront.net/41481161/original_8e962010aaa5cf992ada7b7aea304b66.png?1764568854?bc=0",
+    img6: "https://d2w9rnfcy7mm78.cloudfront.net/41481194/original_8373ef08a9b5d37f63c3a15f0638f217.jpg?1764568962?bc=0",
+    img7: "https://d2w9rnfcy7mm78.cloudfront.net/41757891/original_c3e3daf5f632ad29fd1c332996684c4a.png?1765504200?bc=0",
+    img8: "https://d2w9rnfcy7mm78.cloudfront.net/41758099/original_cb11d15b1d654942c0e82e83737bed9f.png?1765505016?bc=0",
+    img9: "https://d2w9rnfcy7mm78.cloudfront.net/41481194/original_8373ef08a9b5d37f63c3a15f0638f217.jpg?1764568962?bc=0"
+};
+
+// 모든 이미지 접기(초기상태)
+function closeAll() {
+    outputs.forEach(out => out.innerHTML = "");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// 모든 이미지 펼치기
+function openAll() {
+    outputs.forEach(out => {
+        const id = out.id;
+        if (imageMap[id]) {
+            out.innerHTML = `<img src="${imageMap[id]}" />`;
+        }
+    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// 버튼 이벤트 연결
+document.getElementById("homeBtn").addEventListener("click", closeAll);
+document.getElementById("openBtn").addEventListener("click", openAll);
+
+
+
+
 </script>
+
+
 </body>
+
+
 </html>
 
 	<!--
