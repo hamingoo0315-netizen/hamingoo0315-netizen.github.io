@@ -78,6 +78,7 @@ img {
 
 .container {
     width: 300px;
+    font-family: pretend;
     background-color: white;
     margin: auto;
     justify-content: center;
@@ -101,6 +102,23 @@ figcaption {
     body {
         background-color: white;
     }
+
+    .floating-sidebar {
+        /* (나머지 모바일 스타일은 유지) */
+        position: fixed; 
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        
+        /* ✅ 높이 수정: 50px에서 40px로 줄여 더 얇게 만듭니다. */
+        height: 40px; 
+        
+        width: 100%; 
+        transform: none; 
+    }
+    /* ... */
+}
     /*
     .image-group .container {
         display: flex;
