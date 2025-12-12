@@ -110,9 +110,10 @@ figcaption {
         left: 0;
         right: 0;
         top: auto;
-        
+        gap: 20px;
+    
         /* ✅ 높이 수정: 50px에서 40px로 줄여 더 얇게 만듭니다. */
-        height: 40px; 
+        height: 30px; 
         
         width: 100%; 
         transform: none; 
