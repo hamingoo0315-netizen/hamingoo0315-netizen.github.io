@@ -315,16 +315,24 @@ img {
 }
 
 
+
 .instagram-link-wrapper{
 
 
     text-align: center;
-
+    img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.4);
 
 }
 
-cursor: ;
 
+
+/* 모든 요소에 적용 */
+html, body {
+  -webkit-text-size-adjust: none; /* 웹킷 기반 브라우저 (Chrome, Safari 등) */
+  text-size-adjust: none; /* 표준 속성 */
+}
 
 </style>
 
