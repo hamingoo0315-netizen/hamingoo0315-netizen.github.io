@@ -1,21 +1,28 @@
-	
-
-
-    	
-
-        *{
- margin : 0;
- padding: 0;
- box-sizing: border-box;
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ------------------------------------------------ */
+/* 🖱️ 사이트 전체 커서 변경 설정 (수정됨) */
+/* ------------------------------------------------ */
 
+/* 이미지 URL 및 핫스팟 좌표 (8 8은 16x16px 이미지 중앙에 적합합니다) */
+body {
+    /* 32x32px 이미지라면, 중앙 핫스팟은 16 16 */
+    cursor: url('my-cursor.png') 16 16, auto; 
+}
 
-
-
+a, button, .white-box, input[type="submit"] {
+    cursor: url('my-cursor.png') 16 16, auto !important;
+}
+/* ------------------------------------------------ */
+/* 기존 스타일 코드 */
+/* ------------------------------------------------ */
 
 h1 {
-
     margin: auto;
     font-family: arial;
     font-size: 20pt;
@@ -23,38 +30,32 @@ h1 {
     text-align: center;
 }
 
-h7{ position: relative;
+h7 { 
+    position: relative;
     margin: auto;
     font-family: arial;
     font-size: 10pt;
     color: lightgrey;
     text-align: center;
-
 }
 
 p {
     position: relative;
     line-height: 2;
     text-align: center;
-
 }
 
 a {
-
-
     text-align: center;
     position: relative;
 }
 
-footer{ 
-    position resize: ;
+footer { 
+    /* position resize: ;  <-- 이 구문은 문법 오류이므로 제거되었습니다. */
     margin-left: 315px;
     text-align: left;
     font-size: 7pt;
 }
-
-
-
 
 img {
     height: 140px;
@@ -67,10 +68,7 @@ img {
     justify-content: center;
     /*display: flex;*/
     gap: 5px;
-
-
 }
-
 
 figure.image-group {
     text-align: center;
@@ -80,15 +78,6 @@ figure.image-group {
 figcaption {
     margin-top: 20px;
 }
-
-
-
-
-
-@media screen and (max-width: 704px) {
-    
-}
-
 
 .floating-btn {
     position: fixed;   /* 화면에 고정 */
@@ -101,131 +90,128 @@ figcaption {
     border-radius: 8px;
     cursor: pointer;
 }
-@media screen and (max-width: 704px){
 
-    body{
+/* 미디어 쿼리 - 704px 이하일 때 스타일 */
+@media screen and (max-width: 704px) {
+    body {
         background-color: pink;
     }
-}
-    /*border: lightgrey 5px dotted;
+    /*
+    .image-group .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .image-button {
+        width: 120px;
+        cursor: pointer;
+    }
+    */
 }
 
-.image-group .container {
-    display: flex;
-    justify-content: center;  /* 가로 가운데 정렬 */
-    gap: 20px;                /* 박스들 사이 간격 */
-    margin-bottom: 20px;      /* 아래 간격 */
-}
+/* (주석 처리된 코드: .image-group .container 등) */
+/* border: lightgrey 5px dotted;  <-- 이 구문은 적용 대상이 없으므로 주석 처리했습니다. */
 
 .image-button {
     width: 120px;
     cursor: pointer;
 }
 
- <style>
-    /* 전체 가운데 정렬 (페이지 내에서 갤러리 영역 가운데) */
-    .gallery-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center; /* 가로 중앙 */
-    }
 
-    /* 갤러리 자체 너비를 제한해서 중앙에 보이게 함 */
-    .gallery {
-      max-width: 520px; /* 원하는 너비로 조절 */
-      width: 100%;
+/* ------------------------------------------------ */
+/* 갤러리/그리드 관련 스타일 (HTML 구조에 따라 사용 여부 결정) */
+/* ------------------------------------------------ */
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      margin: 40px 0;
-    }
-
-    /* 한 줄(row)은 가운데 정렬된 flex 행 */
-    .row {
-      width: 100%;
-      display: flex;
-      justify-content: center; /* 행 내에서 가운데 정렬 */
-      gap: 20px;
-    }
-
-    /* 각 아이템(박스 + 그 아래 이미지 영역)을 세로로 쌓기 */
-    .item {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* 박스와 그 아래 이미지 가운데 정렬 */
-      width: 120px;        /* 박스 너비에 맞춰 고정 */
-    }
-
-    /* 하얀 박스(이미지 버튼) */
-    .white-box {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      cursor: pointer;
-      display: block;
-      user-select: none;
-    }
-
-    /* 박스 바로 아래 나오는 이미지 영역 */
-    .image-area {
-      width: 100%;
-      margin-top: 10px;
-      /* 처음엔 비어있음; 이미지가 들어오면 block으로 보임 (자동) */
-    }
-
-    .image-area img {
-      width: 100%;       /* item width에 맞춤 */
-      height: auto;
-      display: block;
-      border-radius: 6px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    /* 높은 우선순위로 외부 스타일 덮어쓰기를 보장 (필요하면 제거 가능) */
-    .gallery .row .item .white-box { display: block !important; }
-
-    .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3개씩 1줄 */
-    gap: -60px;
-    width: 380px; /* 블록 3개가 들어가는 전체 너비 */
-    margin: 0 auto; /* 화면 가운데 정렬 */
+.gallery-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-/* 하얀 버튼 */
+.gallery {
+    max-width: 520px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 40px 0;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.white-box {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    display: block;
+    user-select: none;
+}
+
+.image-area {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.image-area img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.gallery .row .item .white-box { display: block !important; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: -60px;
+    width: 380px;
+    margin: 0 auto;
+}
+
 .white-box {
     width: 200px;
     cursor: pointer;
 }
 
-/* 큰 이미지 출력 영역 */
 .image-output {
-    grid-column: span 3;   /* ★★★ 3칸 전체 너비를 차지 */
+    grid-column: span 3;
     margin-top: 10px;
 }
 
 .image-output img {
     width: 100%;
-    height: auto;          /* 전체 폭을 꽉 채움 */
+    height: auto;
     display: block;
     border-radius: 7px;
-
-
 }
 
 .page-wrapper {
-    max-width: 1200px;   /* 원하는 너비 */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* 버튼 3개 촘촘하게 정렬 */
 .button-row {
     display: flex;
     justify-content: center;
-    gap: 20px;           /* 간격 원하는 대로 */
+    gap: 20px;
     margin-bottom: 40px;
 }
 
@@ -236,7 +222,6 @@ figcaption {
     cursor: pointer;
 }
 
-/* 아래 큰 이미지 */
 .content-section {
     text-align: center;
 }
@@ -259,10 +244,4 @@ figcaption {
 .text-columns .col {
     width: 180px;
 }
-
-
-
-
-  </style>
-
 
