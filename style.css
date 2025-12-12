@@ -78,7 +78,6 @@ img {
 
 .container {
     width: 300px;
-    font-family: pretend;
     background-color: white;
     margin: auto;
     justify-content: center;
@@ -102,7 +101,7 @@ figcaption {
     body {
         background-color: white;
     }
-
+    @font-face {font-family: 'rixgob','RixSGo B'; src:url("./font/rixgob.eot");}
     .floating-sidebar {
         /* (나머지 모바일 스타일은 유지) */
         position: fixed; 
