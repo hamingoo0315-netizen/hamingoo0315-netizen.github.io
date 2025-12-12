@@ -192,7 +192,7 @@ figcaption {
 
 /* ⬇⬇⬇ 여기부터 사이드바 CSS ⬇⬇⬇ */
 .floating-sidebar {
-    position: fixed;
+    position: relative;
     top: 600px;
 
     right: 590px;
@@ -204,6 +204,7 @@ figcaption {
 }
 
 .floating-sidebar .side-btn {
+    position: relative;
     width: 100px;
     height: auto;
     cursor: pointer;
@@ -294,10 +295,6 @@ img {
 
 
 }
-
-
-
-
 
 
 
