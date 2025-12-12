@@ -99,7 +99,7 @@ figcaption {
 /* 미디어 쿼리 - 704px 이하일 때 스타일 */
 @media screen and (max-width: 704px) {
     body {
-        background-color: pink;
+        background-color: white;
     }
     /*
     .image-group .container {
@@ -195,7 +195,7 @@ figcaption {
 
     /* ✅ 수정: 메인 콘텐츠 (1200px) 영역 옆에 위치하도록 계산 */
     /* 100vw는 브라우저 전체 너비, 1200px는 콘텐츠 너비 */
-    right: calc((100vw - 1200px) / 2 - 30px); /* 메인 콘텐츠 오른쪽에서 30px 간격 */
+    right: calc((100vw - 1200px) / 2 - -300px); /* 메인 콘텐츠 오른쪽에서 30px 간격 */
     
     /* ❌ transform: noe; 를 올바르게 수정 */
     /* ✅ 수정: 세로 중앙 정렬을 위한 필수값 */
@@ -305,7 +305,7 @@ img {
 
 }
 
-
+cursor: ;
 
 
 </style>
