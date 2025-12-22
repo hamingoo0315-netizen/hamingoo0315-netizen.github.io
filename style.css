@@ -326,7 +326,12 @@ img {
 
 }
 
-
+.image-output.open {
+    cursor: pointer;
+}
+.image-output.open img {
+    cursor: pointer;
+}
 
 
 /* 모든 요소에 적용 */
